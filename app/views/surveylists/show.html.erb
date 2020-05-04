@@ -1,0 +1,21 @@
+<div class = "container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @surveylist.name %>
+</p>
+
+<p>
+  <strong>Laptop:</strong>
+  <%= @surveylist.laptop %>
+</p>
+
+<p>
+  <strong>Os:</strong>
+  <%= @surveylist.os %>
+</p>
+
+<%= link_to 'Edit', edit_surveylist_path(@surveylist) %> |
+<%= link_to 'Back', surveylists_path %>
+</div>

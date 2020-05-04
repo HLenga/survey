@@ -1,0 +1,34 @@
+<%= form_with(model: surveylist, local: true) do |form| %>
+  <% if surveylist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(surveylist.errors.count, "error") %> prohibited this surveylist from being saved:</h2>
+
+      <ul>
+        <% surveylist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, "Please enter your name:" %>
+    <%= form.text_area :name, id: :survey_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :laptop, "Do you own a laptop?" %><br />
+    <%= form.label :laptop, "Yes", :value => "true"  %>
+    <%= form.radio_button :laptop, "Yes", :checked => true %>
+    <%= form.label :laptop, "No", :value => "false" %>
+    <%= form.radio_button :laptop, "No" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.select :os, ["Windows 10", "MAC OS","Linux","Windows 7 and below"]%>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Submit Your Response", class: "btn btn-primary"%>
+  </div>
+<% end %>

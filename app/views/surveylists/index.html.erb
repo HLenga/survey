@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Surveylists</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Laptop</th>
+      <th>Os</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @surveylists.each do |surveylist| %>
+      <tr>
+        <td><%= surveylist.name %></td>
+        <td><%= surveylist.laptop %></td>
+        <td><%= surveylist.os %></td>
+        <td><%= link_to 'Show', surveylist %></td>
+        <td><%= link_to 'Edit', edit_surveylist_path(surveylist) %></td>
+        <td><%= link_to 'Destroy', surveylist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Surveylist', new_surveylist_path %>
